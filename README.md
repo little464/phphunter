@@ -2,7 +2,7 @@ Installing (Linux)
 
 
 
-git clone https://github.com/YOUR-USERNAME/phphunter.git
+git clone https://github.com/littlevenomm464/phphunter.git
 
 
 cd phphunter
@@ -27,4 +27,4 @@ Usage:
 
 
 
-phphunter https://example.com
+hunt https://example.com
