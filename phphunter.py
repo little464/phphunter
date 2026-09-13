@@ -255,7 +255,7 @@ def run_sqlmap(sqli_urls):
         print(f"{'-'*55}")
         try:
             subprocess.run([
-                "sqlmap", "-u", full, "-p", p,
+               "sqlmap", "-u", full, "-p", p,
                 "--batch", "--level=3", "--risk=2", "--dbs",
                 "--threads=5", "--random-agent", "--tamper=space2comment"
             ])
@@ -357,8 +357,6 @@ def main():
             for t in pe["tests"]:
                 guide = how_to_test(t)
                 if guide:
-
-                    
                     print(guide)
                     report_lines.append(guide)
             # SQLi candidates collect karo
